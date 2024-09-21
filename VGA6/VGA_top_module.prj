@@ -1,5 +1,0 @@
-vhdl work "VGA_display.vhd"
-vhdl work "VGA6_sync.vhd"
-vhdl work "morsegenerator.vhd"
-vhdl work "CI.vhd"
-vhdl work "VGA_top_module.vhd"

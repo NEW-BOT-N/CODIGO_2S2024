@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/ise/VGA6/VGA_top_module.ncd
-OUTFILE=/home/ise/VGA6/VGA_top_module.bit
-FAMILY=Spartan3A and Spartan3AN
-PART=xc3s50a-5tq144
-WORKINGDIR=/home/ise/VGA6
-LICENSE=ISE
-USER_INFO=8416_11442_1478797146_620
