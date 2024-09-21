@@ -1,0 +1,10 @@
+EN vga_sync NULL /home/ise/VGA6/VGA6_sync.vhd sub00/vhpl02 1726263061
+EN ci NULL /home/ise/VGA6/CI.vhd sub00/vhpl06 1726263059
+EN vga_display NULL /home/ise/VGA6/VGA_display.vhd sub00/vhpl00 1726263057
+EN vga_top_module NULL /home/ise/VGA6/VGA_top_module.vhd sub00/vhpl04 1726263065
+AR ci behavioral /home/ise/VGA6/CI.vhd sub00/vhpl07 1726263060
+AR vga_sync behavioral /home/ise/VGA6/VGA6_sync.vhd sub00/vhpl03 1726263062
+EN morsegenerator NULL /home/ise/VGA6/morsegenerator.vhd sub00/vhpl08 1726263063
+AR vga_top_module behavioral /home/ise/VGA6/VGA_top_module.vhd sub00/vhpl05 1726263066
+AR morsegenerator behavioral /home/ise/VGA6/morsegenerator.vhd sub00/vhpl09 1726263064
+AR vga_display behavioral /home/ise/VGA6/VGA_display.vhd sub00/vhpl01 1726263058

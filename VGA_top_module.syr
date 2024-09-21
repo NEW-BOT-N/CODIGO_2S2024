@@ -1,0 +1,790 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: VGA_top_module.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "VGA_top_module.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "VGA_top_module"
+Output Format                      : NGC
+Target Device                      : xc3s50a-5-tq144
+
+---- Source Options
+Top Module Name                    : VGA_top_module
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/ise/VGA6/VGA_display.vhd" in Library work.
+Entity <vga_display> compiled.
+Entity <vga_display> (Architecture <behavioral>) compiled.
+Compiling vhdl file "/home/ise/VGA6/CI.vhd" in Library work.
+Architecture behavioral of Entity ci is up to date.
+Compiling vhdl file "/home/ise/VGA6/VGA6_sync.vhd" in Library work.
+Architecture behavioral of Entity vga_sync is up to date.
+Compiling vhdl file "/home/ise/VGA6/morsegenerator.vhd" in Library work.
+Architecture behavioral of Entity morsegenerator is up to date.
+Compiling vhdl file "/home/ise/VGA6/VGA_top_module.vhd" in Library work.
+Architecture behavioral of Entity vga_top_module is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <VGA_top_module> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <CI> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <VGA_sync> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <morsegenerator> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <VGA_display> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <VGA_top_module> in library <work> (Architecture <behavioral>).
+WARNING:Xst:752 - "/home/ise/VGA6/VGA_top_module.vhd" line 47: Unconnected input port 'RST_IN' of component 'CI' is tied to default value.
+WARNING:Xst:753 - "/home/ise/VGA6/VGA_top_module.vhd" line 47: Unconnected output port 'CLKIN_IBUFG_OUT' of component 'CI'.
+WARNING:Xst:753 - "/home/ise/VGA6/VGA_top_module.vhd" line 47: Unconnected output port 'CLK0_OUT' of component 'CI'.
+WARNING:Xst:752 - "/home/ise/VGA6/VGA_top_module.vhd" line 52: Unconnected input port 'Reset' of component 'VGA_sync' is tied to default value.
+WARNING:Xst:1541 - "/home/ise/VGA6/VGA_top_module.vhd" line 52: Different binding for component: <VGA_sync>. Port <Blue> does not match.
+Entity <VGA_top_module> analyzed. Unit <VGA_top_module> generated.
+
+Analyzing Entity <CI> in library <work> (Architecture <behavioral>).
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <CLKIN_IBUFG_INST> in unit <CI>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <CLKIN_IBUFG_INST> in unit <CI>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <CLKIN_IBUFG_INST> in unit <CI>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <CLKIN_IBUFG_INST> in unit <CI>.
+    Set user-defined property "CLKDV_DIVIDE =  2.0000000000000000" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "CLKFX_DIVIDE =  3" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "CLKFX_MULTIPLY =  25" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "CLKIN_DIVIDE_BY_2 =  FALSE" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "CLKIN_PERIOD =  83.3329999999999984" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "CLKOUT_PHASE_SHIFT =  NONE" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "CLK_FEEDBACK =  1X" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "DESKEW_ADJUST =  SYSTEM_SYNCHRONOUS" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "DFS_FREQUENCY_MODE =  LOW" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "DLL_FREQUENCY_MODE =  LOW" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "DSS_MODE =  NONE" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "DUTY_CYCLE_CORRECTION =  TRUE" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "FACTORY_JF =  C080" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "PHASE_SHIFT =  0" for instance <DCM_SP_INST> in unit <CI>.
+    Set user-defined property "STARTUP_WAIT =  FALSE" for instance <DCM_SP_INST> in unit <CI>.
+Entity <CI> analyzed. Unit <CI> generated.
+
+Analyzing Entity <VGA_sync> in library <work> (Architecture <behavioral>).
+Entity <VGA_sync> analyzed. Unit <VGA_sync> generated.
+
+Analyzing Entity <VGA_display> in library <work> (Architecture <Behavioral>).
+INFO:Xst:1433 - Contents of array <braille_matrix> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <$varindex0000> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <letter_matrix> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:2679 - Register <letter_matrix<0>> in unit <VGA_display> has a constant value of 000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <letter_matrix<9>> in unit <VGA_display> has a constant value of 000000000000 during circuit operation. The register is replaced by logic.
+Entity <VGA_display> analyzed. Unit <VGA_display> generated.
+
+Analyzing Entity <morsegenerator> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "/home/ise/VGA6/morsegenerator.vhd" line 35: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <clock>
+INFO:Xst:1432 - Contents of array <bit_sequence> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <bit_sequence> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Entity <morsegenerator> analyzed. Unit <morsegenerator> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <morsegenerator>.
+    Related source file is "/home/ise/VGA6/morsegenerator.vhd".
+    Found 1-bit 22-to-1 multiplexer for signal <$varindex0000> created at line 62.
+    Found 32-bit up counter for signal <bit_index>.
+    Found 1-bit register for signal <bit_index_increment>.
+    Found 22-bit register for signal <bit_sequence>.
+    Found 32-bit up counter for signal <bit_time>.
+    Found 18-bit up counter for signal <bit_tone_period>.
+    Found 7-bit register for signal <braille_pattern_set>.
+    Found 1-bit register for signal <clock>.
+    Found 1-bit register for signal <dac_out>.
+    Found 23-bit up counter for signal <debounce_delay_counter>.
+    Found 6-bit register for signal <prev_state_3x2_push>.
+    Summary:
+	inferred   4 Counter(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <morsegenerator> synthesized.
+
+
+Synthesizing Unit <VGA_display>.
+    Related source file is "/home/ise/VGA6/VGA_display.vhd".
+WARNING:Xst:1780 - Signal <prev_state_bt1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <letter_row_index<7:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <braille_row_index<7:5>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <braille_matrix<0:2>> is used but never assigned. Tied to default value.
+WARNING:Xst:653 - Signal <braille_matrix<3><0:5>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<3><8:11>> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+WARNING:Xst:653 - Signal <braille_matrix<3><14:19>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<4><0:5>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<4><8:11>> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+WARNING:Xst:653 - Signal <braille_matrix<4><14:19>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:1781 - Signal <braille_matrix<5:8>> is used but never assigned. Tied to default value.
+WARNING:Xst:653 - Signal <braille_matrix<9><0:5>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<9><8:11>> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+WARNING:Xst:653 - Signal <braille_matrix<9><14:19>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<10><0:5>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<10><8:11>> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+WARNING:Xst:653 - Signal <braille_matrix<10><14:19>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:1781 - Signal <braille_matrix<11:14>> is used but never assigned. Tied to default value.
+WARNING:Xst:653 - Signal <braille_matrix<15><0:5>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<15><8:11>> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+WARNING:Xst:653 - Signal <braille_matrix<15><14:19>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<16><0:5>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:653 - Signal <braille_matrix<16><8:11>> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
+WARNING:Xst:653 - Signal <braille_matrix<16><14:19>> is used but never assigned. This sourceless signal will be automatically connected to value 000000.
+WARNING:Xst:1781 - Signal <braille_matrix<17:19>> is used but never assigned. Tied to default value.
+WARNING:Xst:646 - Signal <braille_col_index<7:5>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 4x8-bit ROM for signal <background_color$mux0001> created at line 610.
+    Found 8-bit register for signal <pixels>.
+    Found 20-bit 20-to-1 multiplexer for signal <$varindex0000> created at line 631.
+    Found 12-bit 10-to-1 multiplexer for signal <$varindex0001> created at line 638.
+    Found 1-bit 20-to-1 multiplexer for signal <$varindex0002> created at line 631.
+    Found 8-bit register for signal <background_color>.
+    Found 8-bit register for signal <braille_col_index>.
+    Found 7-bit register for signal <braille_pattern_set>.
+    Found 8-bit register for signal <braille_row_index>.
+    Found 7-bit subtractor for signal <braille_row_index$sub0000> created at line 620.
+    Found 23-bit up counter for signal <debounce_delay_counter>.
+    Found 5-bit register for signal <letter_col_index>.
+    Found 5-bit subtractor for signal <letter_col_index$sub0000> created at line 619.
+    Found 96-bit register for signal <letter_matrix<1:8>>.
+    Found 8-bit register for signal <letter_row_index>.
+    Found 11-bit adder for signal <letter_row_index$add0000>.
+    Found 8-bit adder for signal <letter_row_index$addsub0000>.
+    Found 11-bit subtractor for signal <letter_row_index$sub0000> created at line 618.
+    Found 10-bit comparator greatequal for signal <pixels$cmp_ge0000> created at line 625.
+    Found 10-bit comparator greatequal for signal <pixels$cmp_ge0001> created at line 634.
+    Found 10-bit comparator greatequal for signal <pixels$cmp_ge0002> created at line 641.
+    Found 10-bit comparator less for signal <pixels$cmp_lt0000> created at line 623.
+    Found 10-bit comparator less for signal <pixels$cmp_lt0001> created at line 623.
+    Found 10-bit comparator less for signal <pixels$cmp_lt0002> created at line 625.
+    Found 10-bit comparator less for signal <pixels$cmp_lt0003> created at line 625.
+    Found 10-bit comparator less for signal <pixels$cmp_lt0004> created at line 641.
+    Found 6-bit register for signal <prev_state_3x2_push>.
+    Found 1-bit 12-to-1 multiplexer for signal <varindex0001$mux0000> created at line 638.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred 178 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
+	inferred  34 Multiplexer(s).
+Unit <VGA_display> synthesized.
+
+
+Synthesizing Unit <CI>.
+    Related source file is "/home/ise/VGA6/CI.vhd".
+Unit <CI> synthesized.
+
+
+Synthesizing Unit <VGA_sync>.
+    Related source file is "/home/ise/VGA6/VGA6_sync.vhd".
+WARNING:Xst:647 - Input <Reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <prev_state_bt1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <Vsync>.
+    Found 2-bit register for signal <Blue>.
+    Found 3-bit register for signal <Green>.
+    Found 3-bit register for signal <Red>.
+    Found 1-bit register for signal <Hsync>.
+    Found 1-bit register for signal <clock>.
+    Found 1-bit register for signal <divide_by_2>.
+    Found 10-bit comparator greatequal for signal <Green$cmp_ge0000> created at line 79.
+    Found 10-bit comparator greatequal for signal <Green$cmp_ge0001> created at line 79.
+    Found 10-bit up counter for signal <hcount>.
+    Found 10-bit comparator greatequal for signal <Hsync$cmp_ge0000> created at line 74.
+    Found 10-bit comparator less for signal <Hsync$cmp_lt0000> created at line 74.
+    Found 10-bit register for signal <nextHcount>.
+    Found 10-bit adder for signal <nextHcount$addsub0000> created at line 67.
+    Found 10-bit register for signal <nextVcount>.
+    Found 10-bit adder for signal <nextVcount$addsub0000> created at line 64.
+    Found 10-bit up counter for signal <vCount>.
+    Found 10-bit comparator greatequal for signal <Vsync$cmp_ge0000> created at line 69.
+    Found 10-bit comparator less for signal <Vsync$cmp_lt0000> created at line 69.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <VGA_sync> synthesized.
+
+
+Synthesizing Unit <VGA_top_module>.
+    Related source file is "/home/ise/VGA6/VGA_top_module.vhd".
+Unit <VGA_top_module> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 4x8-bit ROM                                           : 1
+# Adders/Subtractors                                   : 7
+ 10-bit adder                                          : 2
+ 11-bit adder                                          : 1
+ 11-bit subtractor                                     : 1
+ 5-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 10-bit up counter                                     : 2
+ 18-bit up counter                                     : 1
+ 23-bit up counter                                     : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 77
+ 1-bit register                                        : 57
+ 10-bit register                                       : 2
+ 12-bit register                                       : 8
+ 2-bit register                                        : 1
+ 22-bit register                                       : 1
+ 3-bit register                                        : 2
+ 5-bit register                                        : 1
+ 8-bit register                                        : 5
+# Comparators                                          : 14
+ 10-bit comparator greatequal                          : 7
+ 10-bit comparator less                                : 7
+# Multiplexers                                         : 5
+ 1-bit 12-to-1 multiplexer                             : 1
+ 1-bit 20-to-1 multiplexer                             : 1
+ 1-bit 22-to-1 multiplexer                             : 1
+ 12-bit 10-to-1 multiplexer                            : 1
+ 20-bit 20-to-1 multiplexer                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <letter_matrix_1_11> in Unit <VGA_display> is equivalent to the following 31 FFs/Latches, which will be removed : <letter_matrix_1_10> <letter_matrix_1_9> <letter_matrix_1_0> <letter_matrix_2_11> <letter_matrix_2_10> <letter_matrix_2_9> <letter_matrix_2_0> <letter_matrix_3_11> <letter_matrix_3_10> <letter_matrix_3_9> <letter_matrix_3_0> <letter_matrix_4_11> <letter_matrix_4_10> <letter_matrix_4_9> <letter_matrix_4_0> <letter_matrix_5_11> <letter_matrix_5_10> <letter_matrix_5_9> <letter_matrix_5_0> <letter_matrix_6_11> <letter_matrix_6_10> <letter_matrix_6_9> <letter_matrix_6_0> <letter_matrix_7_11> <letter_matrix_7_10> <letter_matrix_7_9> <letter_matrix_7_0> <letter_matrix_8_11> <letter_matrix_8_10> <letter_matrix_8_9> <letter_matrix_8_0> 
+INFO:Xst:2261 - The FF/Latch <bit_sequence_19> in Unit <morsegenerator_inst> is equivalent to the following FF/Latch, which will be removed : <bit_sequence_18> 
+INFO:Xst:2261 - The FF/Latch <bit_sequence_21> in Unit <morsegenerator_inst> is equivalent to the following FF/Latch, which will be removed : <bit_sequence_20> 
+WARNING:Xst:1293 - FF/Latch <letter_matrix_1_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bit_sequence_21> has a constant value of 0 in block <morsegenerator_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <letter_row_index_4> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <letter_row_index_5> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <letter_row_index_6> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <letter_row_index_7> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_col_index_5> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_col_index_6> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_col_index_7> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <letter_col_index_4> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_row_index_5> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_row_index_6> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_row_index_7> of sequential type is unconnected in block <VGA_display>.
+
+Synthesizing (advanced) Unit <VGA_display>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_background_color_mux0001> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <VGA_display> synthesized (advanced).
+WARNING:Xst:2677 - Node <letter_row_index_4> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <letter_row_index_5> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <letter_row_index_6> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <letter_row_index_7> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_col_index_5> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_col_index_6> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_col_index_7> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <letter_col_index_4> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_row_index_5> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_row_index_6> of sequential type is unconnected in block <VGA_display>.
+WARNING:Xst:2677 - Node <braille_row_index_7> of sequential type is unconnected in block <VGA_display>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 4x8-bit ROM                                           : 1
+# Adders/Subtractors                                   : 7
+ 10-bit adder                                          : 2
+ 11-bit adder                                          : 1
+ 11-bit subtractor                                     : 1
+ 5-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 10-bit up counter                                     : 2
+ 18-bit up counter                                     : 1
+ 23-bit up counter                                     : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 237
+ Flip-Flops                                            : 237
+# Comparators                                          : 14
+ 10-bit comparator greatequal                          : 7
+ 10-bit comparator less                                : 7
+# Multiplexers                                         : 5
+ 1-bit 12-to-1 multiplexer                             : 1
+ 1-bit 20-to-1 multiplexer                             : 1
+ 1-bit 22-to-1 multiplexer                             : 1
+ 12-bit 10-to-1 multiplexer                            : 1
+ 20-bit 20-to-1 multiplexer                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <bit_sequence_21> has a constant value of 0 in block <morsegenerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bit_sequence_20> has a constant value of 0 in block <morsegenerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <letter_matrix_8_0> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_8_9> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_8_10> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_8_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_7_0> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_7_9> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_7_10> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_7_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_6_0> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_6_9> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_6_10> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_6_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_5_0> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_5_9> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_5_10> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_5_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_4_0> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_4_9> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_4_10> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_4_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_3_0> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_3_9> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_3_10> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_3_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_2_0> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_2_9> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_2_10> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_2_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_1_0> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_1_9> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_1_10> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <letter_matrix_1_11> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <bit_sequence_19> in Unit <morsegenerator> is equivalent to the following FF/Latch, which will be removed : <bit_sequence_18> 
+INFO:Xst:2261 - The FF/Latch <letter_matrix_2_2> in Unit <VGA_display> is equivalent to the following FF/Latch, which will be removed : <letter_matrix_2_1> 
+INFO:Xst:2261 - The FF/Latch <letter_matrix_1_5> in Unit <VGA_display> is equivalent to the following FF/Latch, which will be removed : <letter_matrix_1_4> 
+WARNING:Xst:1293 - FF/Latch <background_color_4> has a constant value of 0 in block <VGA_display>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <braille_col_index_1> in Unit <VGA_display> is equivalent to the following FF/Latch, which will be removed : <letter_col_index_0> 
+INFO:Xst:2261 - The FF/Latch <background_color_2> in Unit <VGA_display> is equivalent to the following FF/Latch, which will be removed : <background_color_6> 
+
+Optimizing unit <VGA_top_module> ...
+
+Optimizing unit <morsegenerator> ...
+
+Optimizing unit <VGA_display> ...
+INFO:Xst:2261 - The FF/Latch <pixels_2> in Unit <VGA_display> is equivalent to the following FF/Latch, which will be removed : <pixels_6> 
+INFO:Xst:2261 - The FF/Latch <pixels_2> in Unit <VGA_display> is equivalent to the following FF/Latch, which will be removed : <pixels_6> 
+
+Optimizing unit <VGA_sync> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <VGA_inst/Red_1> in Unit <VGA_top_module> is equivalent to the following FF/Latch, which will be removed : <VGA_inst/Green_0> 
+Found area constraint ratio of 100 (+ 5) on block VGA_top_module, actual ratio is 57.
+FlipFlop VGA_inst/clock has been replicated 2 time(s)
+FlipFlop morsegenerator_inst/clock has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 347
+ Flip-Flops                                            : 347
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : VGA_top_module.ngr
+Top Level Output File Name         : VGA_top_module
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 22
+
+Cell Usage :
+# BELS                             : 1182
+#      GND                         : 1
+#      INV                         : 48
+#      LUT1                        : 161
+#      LUT2                        : 60
+#      LUT2_D                      : 5
+#      LUT3                        : 134
+#      LUT3_D                      : 4
+#      LUT3_L                      : 9
+#      LUT4                        : 277
+#      LUT4_D                      : 24
+#      LUT4_L                      : 18
+#      MUXCY                       : 205
+#      MUXF5                       : 49
+#      MUXF6                       : 13
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 172
+# FlipFlops/Latches                : 347
+#      FD                          : 25
+#      FDE                         : 79
+#      FDR                         : 111
+#      FDRE                        : 52
+#      FDS                         : 80
+# Clock Buffers                    : 4
+#      BUFG                        : 4
+# IO Buffers                       : 22
+#      IBUF                        : 9
+#      IBUFG                       : 1
+#      OBUF                        : 12
+# DCMs                             : 1
+#      DCM_SP                      : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50atq144-5 
+
+ Number of Slices:                      378  out of    704    53%  
+ Number of Slice Flip Flops:            347  out of   1408    24%  
+ Number of 4 input LUTs:                740  out of   1408    52%  
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of    108    20%  
+ Number of GCLKs:                         4  out of     24    16%  
+ Number of DCMs:                          1  out of      2    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)        | Load  |
+-----------------------------------+------------------------------+-------+
+morsegenerator_inst/clock3         | BUFG                         | 139   |
+VGA_inst/clock3                    | BUFG                         | 202   |
+clk                                | Clocking_in/DCM_SP_INST:CLKFX| 6     |
+-----------------------------------+------------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 10.916ns (Maximum Frequency: 91.607MHz)
+   Minimum input arrival time before clock: 4.408ns
+   Maximum output required time after clock: 5.342ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'morsegenerator_inst/clock3'
+  Clock period: 5.781ns (frequency: 172.977MHz)
+  Total number of paths / destination ports: 7433 / 301
+-------------------------------------------------------------------------
+Delay:               5.781ns (Levels of Logic = 10)
+  Source:            morsegenerator_inst/bit_time_7 (FF)
+  Destination:       morsegenerator_inst/bit_index_31 (FF)
+  Source Clock:      morsegenerator_inst/clock3 rising
+  Destination Clock: morsegenerator_inst/clock3 rising
+
+  Data Path: morsegenerator_inst/bit_time_7 to morsegenerator_inst/bit_index_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.495   0.488  morsegenerator_inst/bit_time_7 (morsegenerator_inst/bit_time_7)
+     LUT4:I0->O            1   0.561   0.000  morsegenerator_inst/bit_time_cmp_eq0000_wg_lut<0> (morsegenerator_inst/bit_time_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.523   0.000  morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<0> (morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.065   0.000  morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<1> (morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<2> (morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<3> (morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<4> (morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<5> (morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O           1   0.065   0.000  morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<6> (morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<6>)
+     MUXCY:CI->O          67   0.065   1.190  morsegenerator_inst/bit_time_cmp_eq0000_wg_cy<7> (morsegenerator_inst/bit_time_cmp_eq0000)
+     LUT3:I0->O           32   0.561   1.073  morsegenerator_inst/bit_index_and00001 (morsegenerator_inst/bit_index_and0000)
+     FDRE:R                    0.435          morsegenerator_inst/bit_index_0
+    ----------------------------------------
+    Total                      5.781ns (3.030ns logic, 2.751ns route)
+                                       (52.4% logic, 47.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'VGA_inst/clock3'
+  Clock period: 9.841ns (frequency: 101.620MHz)
+  Total number of paths / destination ports: 12443 / 380
+-------------------------------------------------------------------------
+Delay:               9.841ns (Levels of Logic = 8)
+  Source:            VGA_inst/VGA_display/braille_pattern_set_0 (FF)
+  Destination:       VGA_inst/VGA_display/letter_matrix_8_5 (FF)
+  Source Clock:      VGA_inst/clock3 rising
+  Destination Clock: VGA_inst/clock3 rising
+
+  Data Path: VGA_inst/VGA_display/braille_pattern_set_0 to VGA_inst/VGA_display/letter_matrix_8_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             26   0.495   1.073  VGA_inst/VGA_display/braille_pattern_set_0 (VGA_inst/VGA_display/braille_pattern_set_0)
+     LUT4_D:I3->O         15   0.561   0.866  VGA_inst/VGA_display/letter_matrix_1_cmp_eq000421 (VGA_inst/VGA_display/N9)
+     LUT4_D:I3->O          6   0.561   0.677  VGA_inst/VGA_display/letter_matrix_1_cmp_eq00281 (VGA_inst/VGA_display/letter_matrix_1_cmp_eq0028)
+     LUT3:I0->O            2   0.561   0.382  VGA_inst/VGA_display/letter_matrix_8_or000221 (VGA_inst/VGA_display/N46)
+     LUT4:I3->O            1   0.561   0.359  VGA_inst/VGA_display/letter_matrix_8_or0002_SW0 (N105)
+     LUT4:I3->O            2   0.561   0.403  VGA_inst/VGA_display/letter_matrix_8_or0002 (VGA_inst/VGA_display/letter_matrix_8_or0002)
+     LUT3:I2->O            2   0.561   0.382  VGA_inst/VGA_display/letter_matrix_8_mux0001<7>11 (VGA_inst/VGA_display/N26)
+     LUT4:I3->O            3   0.561   0.517  VGA_inst/VGA_display/letter_matrix_8_mux0001<3>1 (VGA_inst/VGA_display/letter_matrix_8_mux0001<3>)
+     LUT2:I1->O            1   0.562   0.000  VGA_inst/VGA_display/letter_matrix_8_mux0001<5>11 (VGA_inst/VGA_display/letter_matrix_8_mux0001<5>1)
+     FDS:D                     0.197          VGA_inst/VGA_display/letter_matrix_8_5
+    ----------------------------------------
+    Total                      9.841ns (5.181ns logic, 4.660ns route)
+                                       (52.6% logic, 47.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 10.916ns (frequency: 91.607MHz)
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Delay:               1.310ns (Levels of Logic = 0)
+  Source:            morsegenerator_inst/clock_1 (FF)
+  Destination:       morsegenerator_inst/clock (FF)
+  Source Clock:      clk rising 8.3X
+  Destination Clock: clk rising 8.3X
+
+  Data Path: morsegenerator_inst/clock_1 to morsegenerator_inst/clock
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.495   0.380  morsegenerator_inst/clock_1 (morsegenerator_inst/clock_1)
+     FDR:R                     0.435          morsegenerator_inst/clock
+    ----------------------------------------
+    Total                      1.310ns (0.930ns logic, 0.380ns route)
+                                       (71.0% logic, 29.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'morsegenerator_inst/clock3'
+  Total number of paths / destination ports: 19 / 14
+-------------------------------------------------------------------------
+Offset:              4.408ns (Levels of Logic = 4)
+  Source:            push_button_3x2<3> (PAD)
+  Destination:       morsegenerator_inst/bit_index_increment (FF)
+  Destination Clock: morsegenerator_inst/clock3 rising
+
+  Data Path: push_button_3x2<3> to morsegenerator_inst/bit_index_increment
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.824   0.604  push_button_3x2_3_IBUF (push_button_3x2_3_IBUF)
+     LUT4:I1->O            1   0.562   0.423  morsegenerator_inst/bit_index_increment_not000113 (morsegenerator_inst/bit_index_increment_not000113)
+     LUT4:I1->O            1   0.562   0.359  morsegenerator_inst/bit_index_increment_not000166 (morsegenerator_inst/bit_index_increment_not000166)
+     LUT4:I3->O            1   0.561   0.357  morsegenerator_inst/bit_index_increment_not000182 (morsegenerator_inst/bit_index_increment_not0001)
+     FDE:CE                    0.156          morsegenerator_inst/bit_index_increment
+    ----------------------------------------
+    Total                      4.408ns (2.665ns logic, 1.743ns route)
+                                       (60.5% logic, 39.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'VGA_inst/clock3'
+  Total number of paths / destination ports: 47 / 44
+-------------------------------------------------------------------------
+Offset:              2.805ns (Levels of Logic = 2)
+  Source:            bgcolor_selector<1> (PAD)
+  Destination:       VGA_inst/VGA_display/background_color_1 (FF)
+  Destination Clock: VGA_inst/clock3 rising
+
+  Data Path: bgcolor_selector<1> to VGA_inst/VGA_display/background_color_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.824   0.604  bgcolor_selector_1_IBUF (bgcolor_selector_1_IBUF)
+     LUT2:I1->O            2   0.562   0.380  VGA_inst/VGA_display/Mrom_background_color_mux000111 (VGA_inst/VGA_display/Mrom_background_color_mux0001)
+     FDR:R                     0.435          VGA_inst/VGA_display/background_color_1
+    ----------------------------------------
+    Total                      2.805ns (1.821ns logic, 0.984ns route)
+                                       (64.9% logic, 35.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'VGA_inst/clock3'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              5.271ns (Levels of Logic = 1)
+  Source:            VGA_inst/Red_1 (FF)
+  Destination:       green<0> (PAD)
+  Source Clock:      VGA_inst/clock3 rising
+
+  Data Path: VGA_inst/Red_1 to green<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.495   0.380  VGA_inst/Red_1 (VGA_inst/Red_1)
+     OBUF:I->O                 4.396          green_0_OBUF (green<0>)
+    ----------------------------------------
+    Total                      5.271ns (4.891ns logic, 0.380ns route)
+                                       (92.8% logic, 7.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'morsegenerator_inst/clock3'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              5.342ns (Levels of Logic = 1)
+  Source:            morsegenerator_inst/dac_out (FF)
+  Destination:       jack_audio<1> (PAD)
+  Source Clock:      morsegenerator_inst/clock3 rising
+
+  Data Path: morsegenerator_inst/dac_out to jack_audio<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.495   0.451  morsegenerator_inst/dac_out (morsegenerator_inst/dac_out)
+     OBUF:I->O                 4.396          jack_audio_1_OBUF (jack_audio<1>)
+    ----------------------------------------
+    Total                      5.342ns (4.891ns logic, 0.451ns route)
+                                       (91.6% logic, 8.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.05 secs
+ 
+--> 
+
+
+Total memory usage is 644692 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   93 (   0 filtered)
+Number of infos    :   19 (   0 filtered)
+
